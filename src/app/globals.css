@@ -1,0 +1,496 @@
+@import "tailwindcss";
+@plugin './hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-creato-display: var(--font-creato-display);
+  --font-primary: var(--font-creato-display);
+  --font-secondary: var(--font-messina-sans-mono);
+  --xxs: 400px; /* tumhara custom breakpoint */
+  
+
+  --color-lime: oklch(85.364% 0.1704 107.68);
+  --color-lime-50: oklch(96.205% 0.04947 104.81);
+  --color-lime-100: oklch(94.92% 0.06714 106.7);
+  --color-lime-200: oklch(92.363% 0.10083 106.99);
+  --color-lime-300: oklch(89.915% 0.13082 107.34);
+  --color-lime-400: oklch(87.589% 0.1542 107.58);
+  --color-lime-500: oklch(85.364% 0.1704 107.68);
+  --color-lime-600: oklch(74.121% 0.15154 107.44);
+  --color-lime-700: oklch(59.401% 0.12034 107.85);
+  --color-lime-800: oklch(43.439% 0.08613 107.78);
+  --color-lime-900: oklch(26.21% 0.04755 107.5);
+  --color-lime-950: oklch(16.407% 0.02624 108.97);
+
+  --color-cyan: oklch(77.907% 0.13145 210.63);
+  --color-cyan-50: oklch(92.701% 0.04997 207.27);
+  --color-cyan-100: oklch(90.728% 0.06346 207.26);
+  --color-cyan-200: oklch(86.954% 0.08882 207.35);
+  --color-cyan-300: oklch(83.568% 0.10893 207.94);
+  --color-cyan-400: oklch(80.531% 0.12372 208.94);
+  --color-cyan-500: oklch(77.907% 0.13145 210.63);
+  --color-cyan-600: oklch(65.408% 0.11028 210.57);
+  --color-cyan-700: oklch(51.641% 0.08617 209.78);
+  --color-cyan-800: oklch(36.945% 0.06013 209.86);
+  --color-cyan-900: oklch(20.456% 0.03102 206.15);
+  --color-cyan-950: oklch(10.028% 0.012 213.96);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #070707;
+  }
+}
+
+body {
+  background: #070707;
+  color: var(--foreground);
+  font-family: var(--font-primary);
+}
+
+.register-btn {
+  position: relative;
+  background: linear-gradient(to left, #DBD63370, #1CCDE670);
+  border: none;
+  color: white;
+  overflow: visible;
+  box-shadow:
+    0 0 25px rgba(34, 211, 238, 0.3),
+    /* cyan glow */
+    0 0 35px rgba(229, 255, 0, 0.25),
+    /* yellow glow */
+    0 0 50px rgba(0, 0, 0, 0.4);
+  /* soft depth */
+
+  transition: all 0.3s ease;
+  /* deeper shadow */
+}
+
+/* LEFT SIDE (cyan) */
+.register-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    /* top-left */
+    linear-gradient(#1ccde6, #1ccde6) left top / 20px 2px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left top / 2px 20px no-repeat,
+    /* bottom-left */
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 20px 2px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 2px 20px no-repeat;
+}
+
+/* RIGHT SIDE (yellow) */
+.register-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    /* top-right */
+    linear-gradient(#dbd633, #dbd633) right top / 20px 2px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right top / 2px 20px no-repeat,
+    /* bottom-right */
+    linear-gradient(#dbd633, #dbd633) right bottom / 20px 2px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 2px 20px no-repeat;
+}
+
+/* black button */
+
+.black-btn {
+  position: relative;
+  background: linear-gradient(to right, #ffffff10 0%, #ffffff05 100%);
+  border: none;
+  color: white;
+  overflow: visible;
+}
+
+.black-btn:hover {
+  box-shadow:
+    0 0 25px rgba(34, 211, 238, 0.3),
+    /* cyan glow */
+    0 0 35px rgba(229, 255, 0, 0.25),
+    /* yellow glow */
+    0 0 50px rgba(0, 0, 0, 0.4);
+  /* soft depth */
+
+  transition: all 0.3s ease;
+  /* deeper shadow */
+}
+
+/* LEFT SIDE (cyan) */
+.black-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    /* top-left */
+    linear-gradient(#1ccde6, #1ccde6) left top / 20px 2px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left top / 2px 20px no-repeat,
+    /* bottom-left */
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 20px 2px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 2px 20px no-repeat;
+}
+
+/* RIGHT SIDE (yellow) */
+.black-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    /* top-right */
+    linear-gradient(#dbd633, #dbd633) right top / 20px 2px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right top / 2px 20px no-repeat,
+    /* bottom-right */
+    linear-gradient(#dbd633, #dbd633) right bottom / 20px 2px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 2px 20px no-repeat;
+}
+
+
+.gradient-border {
+  border-image: linear-gradient(to left, #dbd633 0%, #1ccde6 100%) 1;
+  border-radius: 1.5px;
+  /* this doesn't work */
+  border-width: 1.5px;
+  border-style: solid;
+}
+.gradient-border2 {
+  position: relative;
+}
+
+.gradient-border2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* border thickness */
+  border-radius: 1px;
+
+  background: linear-gradient(
+    to top,
+    #ffffff 0%, 
+      /* left yellow */
+    #1ccde6 80%  /* right cyan */
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+/* over all lines  */
+.overall-lines {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff50, #ffffff05);
+  color: white;
+  overflow: visible;
+  padding: 1rem;
+  /* optional padding */
+}
+
+/* dynamic left lines */
+.overall-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    /* top-left horizontal */
+    linear-gradient(#1ccde6, #1ccde6) left top / 10% 0.2em no-repeat,
+    /* top-left vertical */
+    linear-gradient(#1ccde6, #1ccde6) left top / 0.2em 10% no-repeat,
+    /* bottom-left horizontal */
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 10% 0.2em no-repeat,
+    /* bottom-left vertical */
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 0.2em 10% no-repeat;
+}
+
+/* dynamic right lines */
+.overall-lines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    /* top-right horizontal */
+    linear-gradient(#dbd633, #dbd633) right top / 10% 0.2em no-repeat,
+    /* top-right vertical */
+    linear-gradient(#dbd633, #dbd633) right top / 0.2em 10% no-repeat,
+    /* bottom-right horizontal */
+    linear-gradient(#dbd633, #dbd633) right bottom / 10% 0.2em no-repeat,
+    /* bottom-right vertical */
+    linear-gradient(#dbd633, #dbd633) right bottom / 0.2em 10% no-repeat;
+}
+
+
+
+/* FAQ CTA - glassy transparent, separate left/right shadows */
+.faqs-cta-btn {
+  position: relative;
+  color: white;
+  background: linear-gradient(to right,
+      rgba(28, 205, 230, 0.20),
+      rgba(219, 214, 51, 0.20));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: none;
+  /* Left cyan glow | Right yellow glow - separate, no mix */
+  box-shadow:
+    -18px 0 35px rgba(28, 205, 230, 0.45),
+    18px 0 35px rgba(219, 214, 51, 0.45);
+  transition: all 0.3s ease;
+}
+
+.faqs-cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* L-shaped: top-left cyan */
+  background:
+    linear-gradient(#1ccde6, #1ccde6) left top / 20px 2px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left top / 2px 30px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 20px 2px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 2px 30px no-repeat,
+    /* L-shaped: top-right yellow */
+    linear-gradient(#dbd633, #dbd633) right top / 20px 2px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right top / 2px 30px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 20px 2px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 2px 30px no-repeat;
+
+}
+
+/* Real-time tracking CTA button (different style) */
+.tracking-start-btn {
+  position: relative;
+  height: auto;
+  padding: 10px 18px;
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.85);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #0b0b0b;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.tracking-start-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* normalinner-btn */
+.normalinner-btn {
+  position: relative;
+  color: white;
+
+  /* glass background */
+  background: rgba(255, 255, 255, 0.08);
+  /* IMPORTANT */
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 25px rgba(34, 211, 238, 0.25),
+    0 0 35px rgba(229, 255, 0, 0.2);
+
+  transition: all 0.3s ease;
+}
+
+/* corner lines */
+.normalinner-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(#1ccde6, #1ccde6) left top / 20px 2px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left top / 2px 30px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 20px 2px no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 2px 30px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right top / 20px 2px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right top / 2px 30px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 20px 2px no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 2px 30px no-repeat;
+}
+
+
+/* boxes container with lines */
+.boxes-lines {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  /* your initial gradient */
+  transition: all 0.3s ease;
+  /* smooth hover */
+  z-index: 0;
+  /* make sure lines and shadow stack correctly */
+}
+
+/* hover effect on the box */
+.boxes-lines:hover {
+  background: linear-gradient(to left, #DBD63370, #1CCDE670);
+  box-shadow:
+    -12px 10px 77px #22d3ee4d, 27px 1px 74px #e5ff0040, 10px 58px 29px #0006
+    /* soft depth */
+}
+
+/* dynamic left lines - initially hidden */
+.boxes-lines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background:
+    linear-gradient(#1ccde6, #1ccde6) left top / 0 0 no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left top / 0 0 no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 0 0 no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 0 0 no-repeat;
+  transition: background-size 0.3s ease;
+  z-index: 1;
+  /* above content but below text */
+}
+
+/* dynamic right lines - initially hidden */
+.boxes-lines::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background:
+    linear-gradient(#dbd633, #dbd633) right top / 0 0 no-repeat,
+    linear-gradient(#dbd633, #dbd633) right top / 0 0 no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 0 0 no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 0 0 no-repeat;
+  transition: background-size 0.3s ease;
+  z-index: 1;
+}
+
+/* expand lines on hover */
+.boxes-lines:hover::before,
+.boxes-lines:hover::after {
+  background-size: 25% 0.1em, 0.1em 50%, 25% 0.1em, 0.1em 50%;
+}
+
+
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+
+
+
+
+/* faqs container */
+.faqs-lines {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(to left, #DBD63370, #1CCDE670);
+  box-shadow:
+    -12px 10px 77px #22d3ee4d,
+    27px 1px 74px #e5ff0040,
+    10px 58px 29px #0006;
+  transition: all 0.3s ease;
+}
+
+/* left lines */
+.faqs-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(#1ccde6, #1ccde6) left top / 25% 0.1em no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left top / 0.1em 50% no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 25% 0.1em no-repeat,
+    linear-gradient(#1ccde6, #1ccde6) left bottom / 0.1em 50% no-repeat;
+}
+
+/* right lines */
+.faqs-lines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(#dbd633, #dbd633) right top / 25% 0.1em no-repeat,
+    linear-gradient(#dbd633, #dbd633) right top / 0.1em 50% no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 25% 0.1em no-repeat,
+    linear-gradient(#dbd633, #dbd633) right bottom / 0.1em 50% no-repeat;
+}
+
+
+
+/* simpleblack - glassy transparent, separate left/right shadows */
+.simpleblack-btn {
+  position: relative;
+  color: black;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.2),
+      rgba(219, 214, 51, 0.20));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: none;
+  /* Left cyan glow | Right yellow glow - separate, no mix */
+  transition: all 0.3s ease;
+}
+
+.simpleblack::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* L-shaped: top-left cyan */
+  background:
+    linear-gradient(#000000, #000000) left top / 20px 2px no-repeat,
+    linear-gradient(#000000, #000000) left top / 2px 30px no-repeat,
+    linear-gradient(#000000, #000000) left bottom / 20px 2px no-repeat,
+    linear-gradient(#000000, #000000) left bottom / 2px 30px no-repeat,
+    /* L-shaped: top-right yellow */
+    linear-gradient(#000000, #000000) right top / 20px 2px no-repeat,
+    linear-gradient(#000000, #000000) right top / 2px 30px no-repeat,
+    linear-gradient(#000000, #000000) right bottom / 20px 2px no-repeat,
+    linear-gradient(#000000, #000000) right bottom / 2px 30px no-repeat;
+
+}
