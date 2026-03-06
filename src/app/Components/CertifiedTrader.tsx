@@ -10,22 +10,22 @@ import 'swiper/css';
 
 const certificates = [
     {
-        image: '/images/certificate/certificate1.png',
+        image: '/images/certificate/certificate11.png',
         name: 'Ines Moresan',
         quote: 'I started to realize that I could have all this capital to generate 3x more income.',
     },
     {
-        image: '/images/certificate/certificate2.png',
+        image: '/images/certificate/certificate22.png',
         name: 'Mike McCullough',
         quote: "It’s incredible to be able to diversify and have different streams of income.",
     },
     {
-        image: '/images/certificate/certificate3.png',
+        image: '/images/certificate/certificate33.png',
         name: 'Ava Thompson',
         quote: 'URFX helped me scale from a part-time trader to a consistent funded trader.',
     },
     {
-        image: '/images/certificate/certificate4.png',
+        image: '/images/certificate/certificate44.png',
         name: 'Daniel Reyes',
         quote: 'The evaluations are fair and the payouts are always on time.',
     },
