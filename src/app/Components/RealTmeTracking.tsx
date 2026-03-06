@@ -304,34 +304,34 @@ export default function RealTmeTracking() {
                                     title: 'Success Rate',
                                     value: '92.3%',
                                     sub: '+5.2% of trades hit profit',
-                                    icon: <FiBarChart2 />,
+                                    icon: <FiBarChart2 size={20} />,
                                     accent: '#25E28A',
                                 },
                                 {
                                     title: 'Average profit',
                                     value: '$185.50',
                                     sub: '+12.5% per winning trade',
-                                    icon: <FiDollarSign />,
+                                    icon: <FiDollarSign size={20}/>,
                                     accent: '#25E28A',
                                 },
                                 {
                                     title: 'Execution Rate',
                                     value: '0.04s',
                                     sub: '99.9% average execution time',
-                                    icon: <RiTimer2Fill  />,
+                                    icon: <RiTimer2Fill size={20} />,
                                     accent: '#25E28A',
                                 },
                                 {
                                     title: 'Risk Management',
                                     value: 'Active',
                                     sub: '99.9% advanced protection enabled',
-                                    icon: <BsFillShieldLockFill  />,
+                                    icon: <BsFillShieldLockFill size={20} />,
                                     accent: '#25E28A',
                                 },
                             ].map((card, idx) => (
                                 <motion.div
                                     key={card.title}
-                                    className="bg-[#111111] px-4 py-3 shadow-[0_18px_70px_rgba(0,0,0,0.25)] items-center justify-start gap-x-10 flex flex-row md:flex-col"
+                                    className="bg-[#111111] px-4 py-3 shadow-[0_18px_70px_rgba(0,0,0,0.25)] items-center md:items-start justify-start gap-x-10 flex flex-row md:flex-col"
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, amount: 0.2 }}
